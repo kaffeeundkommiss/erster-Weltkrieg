@@ -19,6 +19,7 @@ Online: https://kaffeeundkommiss.github.io/erster-Weltkrieg/
 - `quellen-*.html` – je Seite eine eigene Quellenseite (Karte, Personen, drei Ereignisseiten, Glossar), erreichbar über die Schaltfläche „Quellen“ am Seitenende; Verweise im Text (S1, A1, B1, [n]) springen dorthin. Die Quellenliste der Karte steht in `quellen-karte.js`.
 - `site.js`, `site.css` – gemeinsame Bausteine aller Seiten: antippbare Begriffserklärungen beim ersten Vorkommen je Seite,
   Kontextzeile für Einsteiger, einklappbare Belege in den Ablaufkarten der Ereignisseiten.
+- `modell/dr1.js` – drehbares 3D-Modell der Fokker Dr.I neben „Worum geht es?“ auf der Karte; nutzt three.js 0.159.0, lokal in `modell/vendor/` (MIT-Lizenz). Belege zu den Angaben auf `quellen-karte.html#dr1`.
 - `manifest.webmanifest` – Web-App-Manifest, damit die Seite vom Home-Bildschirm als App öffnet.
 
 ## Veröffentlichung
