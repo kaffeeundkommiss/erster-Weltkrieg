@@ -66,7 +66,7 @@ header { display: grid; gap: 10px }
 .logo-plane { fill: var(--red) }
 .logo-text { fill: var(--ink); font: 700 12.5px var(--f-display); letter-spacing: .16em }
 .eyebrow { font: 600 13px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--red) }
-h1 { font: 700 clamp(28px, 5vw, 46px)/1 var(--f-display); margin: 0; text-transform: uppercase; text-wrap: balance }
+h1, .h1 { font: 700 clamp(28px, 5vw, 46px)/1 var(--f-display); margin: 0; text-transform: uppercase; text-wrap: balance }
 .lede { margin: 0; max-width: 68ch; color: var(--muted) }
 nav.pages { display: flex; gap: 8px; flex-wrap: wrap }
 nav.pages a { font: 600 14px/1 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); text-decoration: none;
@@ -160,7 +160,7 @@ button.tf:focus-visible { outline: 2px solid var(--red); outline-offset: 2px }
 <div class="kk-kopf"><div class="kk-in">
   <a class="kk-schild" href="index.html"><img src="icons/favicon.svg" alt="" width="44" height="44"><span><span class="kk-name" style="display:block">Erster Weltkrieg</span><span class="kk-unter" style="display:block">Luftkrieg an der Westfront 1916–1918</span></span></a>
 </div></div>
-<div class="wrap">
+<main class="wrap" id="inhalt">
   <header>
     <div class="brand">
       <svg class="logo" viewBox="-40 -40 80 80" role="img" aria-label="Logo: Flugzeugsilhouette im Abzeichen des Jagdgeschwaders I">
@@ -188,7 +188,7 @@ button.tf:focus-visible { outline: 2px solid var(--red); outline-offset: 2px }
   </section>
 
   <p class="qnav"><a class="qbtn" href="personen.html">Zurück zu „Personen“</a></p>
-</div>
+</main>
 <script src="site.js" defer></script>
 <footer class="kk-fuss"><div class="kk-in">
   <p><a href="https://kaffeeundkommiss.github.io/">Kaffee und Kommiss</a>: Politik, Geschichte und Sicherheitspolitik mit Quellen. Private, nichtkommerzielle Zusammenstellung. Fehler gefunden? Bitte mit Quelle melden.</p>
