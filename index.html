@@ -95,37 +95,6 @@ h1, .h1 { font: 700 clamp(30px, 5vw, 50px)/1 var(--f-display); letter-spacing: .
 .intro .tgl .op, .intro:not([open]) .tgl .cl { display: none } .intro:not([open]) .tgl .op { display: inline }
 .intro:not([open]) { padding-bottom: 14px }
 .intro p { margin: 0 } .intro .how { font-size: 15px; color: var(--muted) } .intro .how b { color: var(--ink); font-weight: 600 } .intro a { color: var(--ink); font-weight: 600 }
-/* Einführung mit 3D-Modell der Fokker Dr.I rechts daneben (mobil darunter) */
-.intro-row { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px; align-items: start }
-.intro-row > .intro { max-width: none }
-@media (max-width: 900px) { .intro-row { grid-template-columns: minmax(0, 1fr) } }
-.dr1 { --dr1-bg: #e4e7e0; --dr1-ground: #d3d8cf; --dr1-ring: #b9c0b6; --dr1-dark: 0;
-  margin: 0; background: var(--panel); border: 1px solid var(--rule); border-radius: 3px; padding: 12px; display: grid; gap: 10px }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dr1 { --dr1-bg: #141815; --dr1-ground: #1f2521; --dr1-ring: #343d37; --dr1-dark: 1 } }
-:root[data-theme="dark"] .dr1 { --dr1-bg: #141815; --dr1-ground: #1f2521; --dr1-ring: #343d37; --dr1-dark: 1 }
-.dr1-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px }
-.dr1-head h2 { font: 700 20px/1 var(--f-display); text-transform: uppercase; letter-spacing: .04em; margin: 0 }
-.dr1-head span { font: 600 12px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: var(--red) }
-.dr1-stage { position: relative; border: 1px solid var(--rule); border-radius: 2px; overflow: hidden; background: var(--dr1-bg) }
-.dr1 canvas { display: block; width: 100%; height: 230px; touch-action: pan-y; cursor: grab }
-.dr1 canvas.grab { cursor: grabbing }
-.dr1-zoom { position: absolute; right: 6px; top: 6px; display: grid; gap: 4px }
-.dr1-msg { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; text-align: center; font-size: 14px; color: var(--muted) }
-.dr1-btns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px }
-.dr1-btns button, .dr1-zoom button { font: 600 13px/1 var(--f-display); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); background: var(--paper);
-  border: 1px solid var(--border); border-radius: 2px; min-height: 34px; padding: 6px 6px 5px; cursor: pointer }
-.dr1-btns button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink) }
-.dr1-btns button:focus-visible, .dr1-zoom button:focus-visible { outline: 2px solid var(--red); outline-offset: 2px }
-.dr1-zoom button { width: 34px; min-height: 34px; padding: 0; font-size: 18px; background: var(--panel) }
-.dr1-tg { grid-template-columns: repeat(2, minmax(0, 1fr)) }
-.dr1 figcaption { font-size: 14px; line-height: 1.45; display: grid; gap: 6px }
-.dr1 figcaption p { margin: 0 }
-.dr1 dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 13px }
-.dr1 dt { color: var(--muted) } .dr1 dd { margin: 0 }
-.dr1 .hint { font-size: 12px; color: var(--muted) } .dr1 a { color: var(--ink); font-weight: 600 }
-.dr1-daten > summary { cursor: pointer; font: 600 13px/1.2 var(--f-display); letter-spacing: .08em; text-transform: uppercase; padding: 4px 0 }
-.dr1-daten[open] > summary { margin-bottom: 4px }
-@media (max-width: 900px) { .dr1 canvas { height: 300px } }
 .side-label { font-family: var(--f-display); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; fill: var(--front); paint-order: stroke; stroke: var(--paper); stroke-linejoin: round; pointer-events: none; transition: opacity .3s }
 .side-ic { pointer-events: none; transition: opacity .3s; opacity: 0 }
 .legend-m { display: none }
@@ -350,49 +319,15 @@ ol.srclist a { color: var(--ink) } ol.srclist li:target { background: var(--red-
     </nav>
   </header>
 
-  <div class="intro-row">
-    <details class="intro" id="intro" open>
-      <summary><h2>Worum geht es?</h2><span class="tgl" aria-hidden="true"><span class="op">Einblenden</span><span class="cl">Ausblenden</span></span></summary>
-      <p>Im Ersten Weltkrieg (1914–1918) standen sich an der Westfront ab Herbst 1914 deutsche Truppen und die Alliierten gegenüber, von der belgischen Küste bis zur Schweizer Grenze. Über der Front wurde auch in der Luft gekämpft.</p>
-      <p>Manfred von Richthofen (1892–1918) gilt mit 80 anerkannten Luftsiegen als erfolgreichster Jagdflieger des Krieges. Weil er sein Flugzeug rot anstreichen ließ, nannte man ihn den „Roten Baron“. Er fiel am 21. April 1918.</p>
-      <p>Die Karte zeigt, wo seine Einheit lag: das Jagdgeschwader I (JG I), im Juni 1917 aus vier Jagdstaffeln gebildet, ab Mai 1918 „Jagdgeschwader Freiherr von Richthofen Nr. 1“. Sie reicht von der Aufstellung der Staffeln 1916 bis zur Auflösung im November 1918.</p>
-      <p class="how"><b>So liest du die Karte:</b> „Abspielen“ startet den Ablauf, „Weiter“ und „Zurück“ gehen Schritt für Schritt. Farbige Linien zeigen die einzelnen Staffeln, die rote Linie das Geschwader nach dem Zusammenschluss; † markiert gefallene oder tödlich verunglückte Flieger. Gepunktet unterstrichene Begriffe lassen sich antippen; alle stehen im <a href="glossar.html">Glossar</a>, dort auch die Belege zu diesem Kasten.</p>
-      <p class="how"><b>Drei Ereignisse im Detail:</b> <a href="boelcke1916.html">Boelckes Tod 1916</a> · <a href="april1917.html">Der „Blutige April“ 1917</a> · <a href="tod.html">Richthofens letzter Flug 1918</a></p>
-    </details>
-    <figure class="dr1" id="dr1" aria-labelledby="dr1-titel">
-      <div class="dr1-head"><h2 id="dr1-titel">Fokker Dr.I</h2><span>3D-Modell</span></div>
-      <div class="dr1-stage">
-        <canvas role="img" aria-label="Drehbares 3D-Modell des Dreideckers Fokker Dr.I in roter Lackierung"></canvas>
-        <div class="dr1-zoom"><button type="button" data-zoom="in" aria-label="Heranzoomen">+</button><button type="button" data-zoom="out" aria-label="Herauszoomen">−</button></div>
-        <p class="dr1-msg" hidden></p>
-      </div>
-      <div class="dr1-btns" role="group" aria-label="Ansicht">
-        <button type="button" data-view="drei" aria-pressed="false">Schräg</button>
-        <button type="button" data-view="seite" aria-pressed="false">Seite</button>
-        <button type="button" data-view="vorne" aria-pressed="false">Vorne</button>
-        <button type="button" data-view="oben" aria-pressed="false">Oben</button>
-        <button type="button" data-view="heck" aria-pressed="false">Heck</button>
-        <button type="button" data-view="unten" aria-pressed="false">Unten</button>
-      </div>
-      <div class="dr1-btns dr1-tg" role="group" aria-label="Bewegung">
-        <button type="button" data-toggle="spin" aria-pressed="true">Drehen</button>
-        <button type="button" data-toggle="prop" aria-pressed="true">Propeller</button>
-      </div>
-      <figcaption>
-        <p>Dreidecker der Firma Fokker. In der Dr.I mit der Werknummer 425/17 wurde Richthofen am 21. April 1918 tödlich getroffen.</p>
-        <details class="dr1-daten"><summary>Technische Daten</summary>
-        <dl>
-          <dt>Länge</dt><dd>5,77 m</dd>
-          <dt>Spannweite (oben)</dt><dd>7,19 m</dd>
-          <dt>Höhe</dt><dd>2,95 m</dd>
-          <dt>Motor</dt><dd>Oberursel Ur.II, Umlaufmotor, 9 Zylinder, 110 PS</dd>
-          <dt>Bewaffnung</dt><dd>2 × MG 08/15, 7,92 mm</dd>
-        </dl>
-        </details>
-        <p class="hint">Ziehen dreht das Modell. Vereinfachte Nachbildung: Form, Bewaffnung und Kennzeichnung sind angenähert. Belege auf der <a href="quellen-karte.html#dr1">Quellenseite</a>.</p>
-      </figcaption>
-    </figure>
-  </div>
+  <details class="intro" id="intro" open>
+    <summary><h2>Worum geht es?</h2><span class="tgl" aria-hidden="true"><span class="op">Einblenden</span><span class="cl">Ausblenden</span></span></summary>
+    <p>Im Ersten Weltkrieg (1914–1918) standen sich an der Westfront ab Herbst 1914 deutsche Truppen und die Alliierten gegenüber, von der belgischen Küste bis zur Schweizer Grenze. Über der Front wurde auch in der Luft gekämpft.</p>
+    <p>Manfred von Richthofen (1892–1918) gilt mit 80 anerkannten Luftsiegen als erfolgreichster Jagdflieger des Krieges. Weil er sein Flugzeug rot anstreichen ließ, nannte man ihn den „Roten Baron“. Er fiel am 21. April 1918.</p>
+    <p>Die Karte zeigt, wo seine Einheit lag: das Jagdgeschwader I (JG I), im Juni 1917 aus vier Jagdstaffeln gebildet, ab Mai 1918 „Jagdgeschwader Freiherr von Richthofen Nr. 1“. Sie reicht von der Aufstellung der Staffeln 1916 bis zur Auflösung im November 1918.</p>
+    <p class="how"><b>So liest du die Karte:</b> „Abspielen“ startet den Ablauf, „Weiter“ und „Zurück“ gehen Schritt für Schritt. Farbige Linien zeigen die einzelnen Staffeln, die rote Linie das Geschwader nach dem Zusammenschluss; † markiert gefallene oder tödlich verunglückte Flieger. Gepunktet unterstrichene Begriffe lassen sich antippen; alle stehen im <a href="glossar.html">Glossar</a>, dort auch die Belege zu diesem Kasten.</p>
+    <p class="how"><b>Drei Ereignisse im Detail:</b> <a href="boelcke1916.html">Boelckes Tod 1916</a> · <a href="april1917.html">Der „Blutige April“ 1917</a> · <a href="tod.html">Richthofens letzter Flug 1918</a></p>
+    <p class="how"><b>3D-Modell:</b> Die Fokker Dr.I steht drehbar auf der Seite <a href="https://kaffeeundkommiss.github.io/geschichte/erster-weltkrieg/technik/">Technik im Modell</a>.</p>
+  </details>
 
   <section class="stage">
     <div class="map" id="map">
@@ -1259,8 +1194,6 @@ document.addEventListener("keydown", e => {
 vb = targetBox(0); render(0); draw();
 </script>
 <script src="site.js" defer></script>
-<script src="modell/vendor/three-0.159.0.min.js" defer></script>
-<script src="modell/dr1.js" defer></script>
 <footer class="kk-fuss"><div class="kk-in">
   <p><a href="https://kaffeeundkommiss.github.io/">Kaffee und Kommiss</a>: Politik, Geschichte und Sicherheitspolitik mit Quellen. Private, nichtkommerzielle Zusammenstellung. Fehler gefunden? Bitte mit Quelle melden.</p>
 </div></footer>
