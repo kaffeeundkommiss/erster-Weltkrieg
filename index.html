@@ -95,6 +95,8 @@ h1, .h1 { font: 700 clamp(30px, 5vw, 50px)/1 var(--f-display); letter-spacing: .
 .intro .tgl .op, .intro:not([open]) .tgl .cl { display: none } .intro:not([open]) .tgl .op { display: inline }
 .intro:not([open]) { padding-bottom: 14px }
 .intro p { margin: 0 } .intro .how { font-size: 15px; color: var(--muted) } .intro .how b { color: var(--ink); font-weight: 600 } .intro a { color: var(--ink); font-weight: 600 }
+.hinweise { border: 1px solid var(--rule); border-radius: 3px; padding: 14px 18px 16px; display: grid; gap: 8px; max-width: 860px }
+.hinweise p { margin: 0; font-size: 15px; color: var(--muted) } .hinweise b { color: var(--ink); font-weight: 600 } .hinweise a { color: var(--ink); font-weight: 600 }
 .side-label { font-family: var(--f-display); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; fill: var(--front); paint-order: stroke; stroke: var(--paper); stroke-linejoin: round; pointer-events: none; transition: opacity .3s }
 .side-ic { pointer-events: none; transition: opacity .3s; opacity: 0 }
 .legend-m { display: none }
@@ -324,9 +326,6 @@ ol.srclist a { color: var(--ink) } ol.srclist li:target { background: var(--red-
     <p>Im Ersten Weltkrieg (1914–1918) standen sich an der Westfront ab Herbst 1914 deutsche Truppen und die Alliierten gegenüber, von der belgischen Küste bis zur Schweizer Grenze. Über der Front wurde auch in der Luft gekämpft.</p>
     <p>Manfred von Richthofen (1892–1918) gilt mit 80 anerkannten Luftsiegen als erfolgreichster Jagdflieger des Krieges. Weil er sein Flugzeug rot anstreichen ließ, nannte man ihn den „Roten Baron“. Er fiel am 21. April 1918.</p>
     <p>Die Karte zeigt, wo seine Einheit lag: das Jagdgeschwader I (JG I), im Juni 1917 aus vier Jagdstaffeln gebildet, ab Mai 1918 „Jagdgeschwader Freiherr von Richthofen Nr. 1“. Sie reicht von der Aufstellung der Staffeln 1916 bis zur Auflösung im November 1918.</p>
-    <p class="how"><b>So liest du die Karte:</b> „Abspielen“ startet den Ablauf, „Weiter“ und „Zurück“ gehen Schritt für Schritt. Farbige Linien zeigen die einzelnen Staffeln, die rote Linie das Geschwader nach dem Zusammenschluss; † markiert gefallene oder tödlich verunglückte Flieger. Gepunktet unterstrichene Begriffe lassen sich antippen; alle stehen im <a href="glossar.html">Glossar</a>, dort auch die Belege zu diesem Kasten.</p>
-    <p class="how"><b>Drei Ereignisse im Detail:</b> <a href="boelcke1916.html">Boelckes Tod 1916</a> · <a href="april1917.html">Der „Blutige April“ 1917</a> · <a href="tod.html">Richthofens letzter Flug 1918</a></p>
-    <p class="how"><b>3D-Modell:</b> Die Fokker Dr.I steht drehbar auf der Seite <a href="https://kaffeeundkommiss.github.io/geschichte/erster-weltkrieg/technik/">Technik im Modell</a>.</p>
   </details>
 
   <section class="stage">
@@ -416,6 +415,12 @@ ol.srclist a { color: var(--ink) } ol.srclist li:target { background: var(--red-
       </details>
     </section>
     <details class="legend-m" id="legendM"><summary>Legende</summary></details>
+  </section>
+
+  <section class="hinweise" aria-label="Hinweise zur Karte">
+    <p class="how"><b>So liest du die Karte:</b> „Abspielen“ startet den Ablauf, „Weiter“ und „Zurück“ gehen Schritt für Schritt. Farbige Linien zeigen die einzelnen Staffeln, die rote Linie das Geschwader nach dem Zusammenschluss; † markiert gefallene oder tödlich verunglückte Flieger. Gepunktet unterstrichene Begriffe lassen sich antippen; alle stehen im <a href="glossar.html">Glossar</a>, dort auch die Belege zum Kasten „Worum geht es?“.</p>
+    <p class="how"><b>Drei Ereignisse im Detail:</b> <a href="boelcke1916.html">Boelckes Tod 1916</a> · <a href="april1917.html">Der „Blutige April“ 1917</a> · <a href="tod.html">Richthofens letzter Flug 1918</a></p>
+    <p class="how"><b>3D-Modell:</b> Die Fokker Dr.I steht drehbar auf der Seite <a href="https://kaffeeundkommiss.github.io/geschichte/erster-weltkrieg/technik/">Technik im Modell</a>.</p>
   </section>
 
 
