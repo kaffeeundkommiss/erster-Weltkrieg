@@ -232,6 +232,9 @@ button.primary { background: var(--red); border-color: var(--red); color: #fff; 
   .panel h2 { font-size: 26px }
   .mapbtn { padding: 8px 10px 7px; font-size: 13px }
 }
+/* Kurze Bedienhilfe direkt an den Knöpfen (23.11.2026); die ausführliche Lesehilfe steht im Kasten „Hinweise zur Karte“ */
+.kurzhilfe { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--muted) } .kurzhilfe b { color: var(--ink); font-weight: 600 }
+@media (max-width: 640px) { .controls > .kurzhilfe { order: 2; margin: 0 2px } }
 .speed select { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--border); padding: 4px }
 
 .ruler { position: relative; height: 62px; margin: 4px 6px 0 }
@@ -395,6 +398,7 @@ ol.srclist a { color: var(--ink) } ol.srclist li:target { background: var(--red-
           </label>
         </div>
       </div>
+      <p class="kurzhilfe"><b>Bedienung:</b> „Abspielen“ zeigt den Weg der Staffeln Schritt für Schritt. Ein Strich auf der Zeitleiste springt zu diesem Zeitpunkt. Der Knopf oben rechts auf der Karte wechselt zwischen ganzer Karte und mitlaufendem Ausschnitt.</p>
       <div class="ruler" id="ruler"><div class="axis"></div><div class="prog" id="prog"></div><div class="playhead" id="playhead"></div></div>
     </section>
 
